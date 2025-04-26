@@ -5,6 +5,7 @@ public class Gomoku {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         char[][] array = new char[19][19];
+        
         for (int i = 0; i < 19; i++) {
             for (int j = 0; j < 19; j++) {
                 array[i][j] = '.';
