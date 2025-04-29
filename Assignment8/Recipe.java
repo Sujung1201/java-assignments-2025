@@ -8,52 +8,48 @@ public class Recipe implements NutritionFacts {
     }
 
     @Override
-    public double getCalories() {
-        double total = 0.0;
-        for (Food f : ingredients) {
-            total += f.getCalories();
-        }
-        return total;
-    }
-
-    @Override
-    public double getFat() {
-        double total = 0.0;
-        for (Food f : ingredients) {
-            total += f.getFat();
-        }
-        return total;
-    }
-
-    @Override
-    public double getCarbs() {
-        double total = 0.0;
-        for (Food f : ingredients) {
-            total += f.getCarbs();
-        }
-        return total;
-    }
-
-    @Override
-    public double getProtein() {
-        double total = 0.0;
-        for (Food f : ingredients) {
-            total += f.getProtein();
-        }
-        return total;
-    }
-
-    @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Recipe{ingredients=[");
-        for (int i = 0; i < ingredients.length; i++) {
-            sb.append(ingredients[i].toString());
-            if (i != ingredients.length - 1) {
+        StringBuilder sb = new StringBuilder("Recipe{name='" + name + "', ingredients=[");
+        for (int i = 0; i < 4; i++) {
+            sb.append(ingredients[i]);
+            if (i != 3) {
                 sb.append(", ");
             }
         }
         sb.append("]}");
         return sb.toString();
     }
+
+    public double getCalories() {
+        double total = 0;
+        for (int i = 0; i < 4; i++) {
+            total += ingredients[i].getCalories();
+        }
+        return total;
+    }
+
+    public double getFat() {
+        double total = 0;
+        for (int i = 0; i < 4; i++) {
+            total += ingredients[i].getFat();
+        }
+        return total;
+    }
+
+    public double getCarbs() {
+        double total = 0;
+        for (int i = 0; i < 4; i++) {
+            total += ingredients[i].getCarbs();
+        }
+        return total;
+    }
+
+    public double getProtein() {
+        double total = 0;
+        for (int i = 0; i < 4; i++) {
+            total += ingredients[i].getProtein();
+        }
+        return total;
+    }
 }
+
