@@ -1,8 +1,9 @@
 public class NoMemory {
     public static void main(String[] args) {
+        String s = "A";
+
         while (true) {
-            int[] bigArray = new int[1000000000];
-            System.out.println(bigArray.length);
+            s += s + s;
         }
     }
 }
